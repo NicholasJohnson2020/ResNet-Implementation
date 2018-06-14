@@ -37,6 +37,7 @@ class BasicBlock(nn.Module):
     out = self.relu(out)
     
     return out
+  
     
 class Bottleneck(nn.Module):
   expansion = 4
@@ -108,3 +109,17 @@ class PreactBlock(nn.Module):
     
     return out
       
+class ResNet(nn.Module):
+  
+  def __init__(self, block, layers, num_classes = 10):
+    self.inplanes = 16
+    super(ResNet, self).__init__()
+    self.conv1 = nn.Conv2d(3, 16, kernel_size = 3, stride = 1,
+                           padding = 1, bias = False)
+    self.bn1 = nn.BatchNorm2d(16)
+    self.relu = nn.ReLU(inplane = True)
+    self.layer1 = self._make_layer(block, 16, layers[0])
+    self.layer2 = self._make_layer(block, 32, layers[1])
+    self.layer3 = self._make_layer(block, 64, layers[2])
+    self.avgpool = nn.AvgPool2d(8, stride = 1)
+    self.fc = nn.Linear(64, num_classes)
