@@ -174,3 +174,15 @@ class ResNet(nn.Module):
   def basicResNet110():
     model = ResNet(BasicBlock, [36, 36, 36])
     return model
+  
+  def bottleResNet20():
+    model = ResNet(Bottleneck, [6, 6, 6])
+    return model
+  
+  def bottleResNet56():
+    model = ResNet(Bottleneck, [18, 18, 18])
+    return model
+  
+  def bottleResNet110():
+    model = ResNet(Bottleneck, [36, 36, 36])
+    return model
