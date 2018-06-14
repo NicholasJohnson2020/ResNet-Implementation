@@ -93,7 +93,7 @@ class ResNet(nn.Module):
     self.avgpool = nn.AvgPool2d(8, stride = 1)
     self.fc = nn.Linear(64, num_classes)
 
-    for m in self.module():
+    for m in self.modules():
       if isinstance(m, nn.Conv2d):
         nn.init.kaiming_normal_(m.weight, mode = 'fan_out', nonlinearity = 'relu')
       elif isinstance(m, nn.BatchNorm2d):
