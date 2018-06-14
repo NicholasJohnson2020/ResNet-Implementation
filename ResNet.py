@@ -162,3 +162,15 @@ class ResNet(nn.Module):
     x = self.fc(x)
     
     return x
+  
+  def basicResNet20():
+    model = ResNet(BasicBlock, [6, 6, 6])
+    return model
+  
+  def basicResNet56():
+    model = ResNet(BasicBlock, [18, 18, 18])
+    return model
+  
+  def basicResNet110():
+    model = ResNet(BasicBlock, [36, 36, 36])
+    return model
