@@ -7,7 +7,7 @@ from torch.autograd import Variable
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-from ResNet import *
+from PreactResNet import *
 import os, sys, time
 import argparse
 from collections import OrderedDict
