@@ -16,7 +16,7 @@ class PreactBlock(nn.Module):
         self.relu = nn.ReLU(inplace = True)
         self.conv1 = conv3x3(inplanes, planes, stride)
         self.bn2 = nn.BatchNorm2d(planes)
-        self.conv2 = conv3x3(planes, planes, stride)
+        self.conv2 = conv3x3(planes, planes)
         self.downsample = downsample
         self.stride = stride
     
