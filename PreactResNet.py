@@ -32,7 +32,7 @@ class PreactBlock(nn.Module):
         out = self.conv2(out)
     
         if self.downsample is not None:
-            residual = self.downsample(x)
+            residual = self.downsample(residual)
       
         out += residual
     
