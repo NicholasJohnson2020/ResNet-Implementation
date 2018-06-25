@@ -39,6 +39,7 @@ class BasicBlock(nn.Module):
         return out
 
 class Bottleneck(nn.Module):
+    expansion = 1
     bottle = 8
   
     def __init__(self, inplanes, planes, stride = 1, downsample = None):
