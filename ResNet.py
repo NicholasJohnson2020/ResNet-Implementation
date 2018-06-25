@@ -45,7 +45,7 @@ class Bottleneck(nn.Module):
     def __init__(self, inplanes, planes, stride = 1, downsample = None):
         super(Bottleneck, self).__init__()
         self.conv1 = nn.Conv2d(inplanes, self.bottle, kernel_size = 1, bias = False)
-        self.bn1 = nn.BatchNorm2d(bottle)
+        self.bn1 = nn.BatchNorm2d(self.bottle)
         self.conv2 = nn.Conv2d(self.bottle, self.bottle, kernel_size = 3, stride = stride,
                                padding = 1, bias = False)
         self.bn2 = nn.BatchNorm2d(self.bottle)
